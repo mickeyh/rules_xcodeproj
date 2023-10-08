@@ -45,6 +45,8 @@ def xcodeproj(
         top_level_targets,
         tvos_device_cpus = "arm64",
         tvos_simulator_cpus = None,
+        visionos_device_cpus = "arm64",
+        visionos_simulator_cpus = None,
         unfocused_targets = [],
         watchos_device_cpus = "arm64_32",
         watchos_simulator_cpus = None,
@@ -294,6 +296,27 @@ def xcodeproj(
             If no value is specified, it defaults to the simulator cpu that goes
             with `--host_cpu` (i.e. `sim_arm64` on Apple Silicon and `x86_64` on
             Intel).
+
+            **Warning:** Changing this value will affect the Starlark transition
+            hash of all transitive dependencies of the targets specified in the
+            `top_level_targets` argument with the `"simulator"`
+            `target_environment`, even if they aren't tvOS targets.
+        visionos_device_cpus: Optional. The value to use for `--visionos_cpus` when
+            building the transitive dependencies of the targets specified in the
+            `top_level_targets` argument with the `"device"`
+            `target_environment`.
+
+            **Warning:** Changing this value will affect the Starlark transition
+            hash of all transitive dependencies of the targets specified in the
+            `top_level_targets` argument with the `"device"`
+            `target_environment`, even if they aren't visionOS targets.
+        visionos_simulator_cpus: Optional. The value to use for `--visionos_cpus` when
+            building the transitive dependencies of the targets specified in the
+            `top_level_targets` argument with the `"simulator"`
+            `target_environment`.
+
+            If no value is specified, it defaults to the simulator cpu that goes
+            with `--host_cpu` (i.e. always `sim_arm64` on Apple Silicon).
 
             **Warning:** Changing this value will affect the Starlark transition
             hash of all transitive dependencies of the targets specified in the
@@ -588,6 +611,8 @@ for {configuration} ({new_keys}) do not match keys of other configurations \
         top_level_simulator_targets = top_level_simulator_targets,
         tvos_device_cpus = tvos_device_cpus,
         tvos_simulator_cpus = tvos_simulator_cpus,
+        visionos_device_cpus = visionos_device_cpus,
+        visionos_simulator_cpus = visionos_simulator_cpus,
         unfocused_labels = unfocused_labels,
         unowned_extra_files = unowned_extra_files,
         watchos_device_cpus = watchos_device_cpus,
