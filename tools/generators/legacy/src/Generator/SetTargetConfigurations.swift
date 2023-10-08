@@ -716,6 +716,7 @@ private extension Platform.OS {
         case .macOS: return "macosx"
         case .iOS: return "iphoneos"
         case .tvOS: return "appletvos"
+        case .visionOS: return "xros"
         case .watchOS: return "watchos"
         }
     }

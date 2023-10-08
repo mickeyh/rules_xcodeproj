@@ -6,6 +6,8 @@ PLATFORM_NAME = {
     apple_common.platform.macos: "macosx",
     apple_common.platform.tvos_device: "appletvos",
     apple_common.platform.tvos_simulator: "appletvsimulator",
+    apple_common.platform.visionos_device: "xros",
+    apple_common.platform.visionos_simulator: "xrsimulator",
     apple_common.platform.watchos_device: "watchos",
     apple_common.platform.watchos_simulator: "watchsimulator",
 }
@@ -67,6 +69,8 @@ _LLDB_TRIPLE_PREFIX = {
     apple_common.platform.macos: "macosx",
     apple_common.platform.tvos_device: "tvos",
     apple_common.platform.tvos_simulator: "tvos",
+    apple_common.platform.visionos_device: "visionos",
+    apple_common.platform.visionos_simulator: "visionos",
     apple_common.platform.watchos_device: "watchos",
     apple_common.platform.watchos_simulator: "watchos",
 }
@@ -77,6 +81,8 @@ _SWIFT_TRIPLE_PREFIX = {
     apple_common.platform.macos: "macos",
     apple_common.platform.tvos_device: "tvos",
     apple_common.platform.tvos_simulator: "tvos",
+    apple_common.platform.visionos_device: "visionos",
+    apple_common.platform.visionos_simulator: "visionos",
     apple_common.platform.watchos_device: "watchos",
     apple_common.platform.watchos_simulator: "watchos",
 }
@@ -87,6 +93,8 @@ _TRIPLE_SUFFIX = {
     apple_common.platform.macos: "",
     apple_common.platform.tvos_device: "",
     apple_common.platform.tvos_simulator: "-simulator",
+    apple_common.platform.visionos_device: "",
+    apple_common.platform.visionos_simulator: "-simulator",
     apple_common.platform.watchos_device: "",
     apple_common.platform.watchos_simulator: "-simulator",
 }
